@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Sri Sai Liquor Shop</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/about.css">
+</head>
+<body>
+    <nav>
+        <a href="home.html" style="display: flex; align-items: center; gap: 15px; text-decoration: none;">
+            <img src="images/logo.png" class="logo-img-dark" alt="Logo" style="height: 50px; border-radius: 8px; border: 1px solid rgba(212, 175, 55, 0.3);">
+            <img src="images/logo_light.png" class="logo-img-light" alt="Logo" style="height: 50px; border-radius: 8px; border: 1px solid rgba(212, 175, 55, 0.3);">
+            <span class="logo">Sri Sai Liquor</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="cart.html" style="position: relative; display: flex; align-items: center; color: var(--text-light);"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--text-light);"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg><span class="cart-count" id="cart-count" style="position: absolute; top: -8px; right: -12px; background: #dc3545; color: white; border-radius: 50%; min-width: 18px; height: 18px; font-size: 0.7rem; font-weight: bold; display: flex; align-items: center; justify-content: center;">0</span></a></li>
+            <li id="nav-profile"></li>
+        </ul>
+    </nav>
+
+    <style>
+        .about-page-wrapper {
+            padding: 120px 50px 50px;
+            max-width: 1000px;
+            margin: 0 auto;
+            font-family: 'Lato', system-ui, sans-serif;
+        }
+        .about-hero {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .about-hero h1 {
+            font-size: 4rem;
+            color: var(--text-light);
+            margin-bottom: 25px;
+            font-family: system-ui, -apple-system, sans-serif;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+        .about-hero p {
+            font-size: 1.15rem;
+            max-width: 700px;
+            margin: 0 auto;
+            color: var(--text-light);
+            line-height: 1.6;
+            font-weight: 500;
+        }
+        .highlight-text {
+            color: #722f37; /* Wine Red */
+        }
+        
+        .about-card-section {
+            background: var(--bg-card);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-radius: 16px;
+            padding: 40px;
+            margin-bottom: 30px;
+            border-top: 1px solid rgba(114, 47, 55, 0.4);
+            border-left: 1px solid rgba(114, 47, 55, 0.2);
+            border-right: 1px solid rgba(0, 0, 0, 0.1);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05), inset 0 0 20px rgba(114, 47, 55, 0.05);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+        .about-card-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(to right, transparent, rgba(114, 47, 55, 0.1), transparent);
+            transform: skewX(-25deg);
+            transition: left 0.7s ease;
+        }
+        .about-card-section:hover::before {
+            left: 200%;
+        }
+        .about-card-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1), inset 0 0 30px rgba(114, 47, 55, 0.1);
+        }
+        .about-card-section h2 {
+            font-size: 1.8rem;
+            color: #722f37; /* Wine Red */
+            margin-bottom: 20px;
+            font-family: system-ui, -apple-system, sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+        .about-card-section p {
+            color: var(--text-light); /* Light gray */
+            margin-bottom: 20px;
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+        
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        @media (max-width: 768px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .location-header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        .location-header h2 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        .location-address {
+            color: #aaa;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+        .btn-outline {
+            display: block;
+            width: 100%;
+            padding: 14px;
+            text-align: center;
+            border: 1px solid #555;
+            border-radius: 30px;
+            color: #fff;
+            text-decoration: none;
+            margin-bottom: 25px;
+            transition: all 0.3s;
+            font-family: system-ui, -apple-system, sans-serif;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        .btn-outline:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-color: #fff;
+        }
+        .map-container {
+            width: 100%;
+            height: 250px;
+            border-radius: 12px;
+            overflow: hidden;
+            background-color: #222;
+        }
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .contact-header {
+            margin-bottom: 25px;
+        }
+        .contact-header h2 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        .contact-header p {
+            font-size: 0.95rem;
+        }
+        
+        .contact-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .contact-card {
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, rgba(20, 20, 20, 0.9), rgba(0, 0, 0, 0.8));
+            padding: 18px 20px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 2px solid transparent;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            text-decoration: none;
+            color: #fff;
+            position: relative;
+            z-index: 1;
+        }
+        .contact-card:hover {
+            background: linear-gradient(135deg, rgba(30, 30, 30, 0.95), rgba(10, 10, 10, 0.9));
+            border-color: rgba(212, 175, 55, 0.5);
+            border-bottom: 2px solid #d4af37;
+            transform: scale(1.02);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5), 0 0 15px rgba(212, 175, 55, 0.2);
+        }
+        .contact-card-icon {
+            width: 46px;
+            height: 46px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 18px;
+            font-size: 22px;
+            box-shadow: inset 0 2px 5px rgba(255,255,255,0.2), 0 5px 15px rgba(0,0,0,0.5);
+        }
+        .icon-phone { background: linear-gradient(135deg, #3b82f6, #1d4ed8); } /* Blue Gradient */
+        .icon-wa { background: linear-gradient(135deg, #22c55e, #15803d); } /* Green Gradient */
+        .icon-email { background: linear-gradient(135deg, #f97316, #c2410c); } /* Orange Gradient */
+        
+        .contact-card-info {
+            flex-grow: 1;
+        }
+        .contact-card-info span {
+            display: block;
+            font-size: 0.7rem;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+        .contact-card-info strong {
+            display: block;
+            font-size: 1rem;
+            font-weight: 600;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+        .contact-card-arrow {
+            color: #555;
+            font-size: 1.2rem;
+            font-family: monospace;
+        }
+    </style>
+
+    <div class="about-page-wrapper">
+        <div class="about-hero">
+            <h1>About Our Vision</h1>
+            <p>Bridging the gap between premium liquor collections and the connoisseurs through <span class="highlight-text">authenticity, quality, and trust.</span></p>
+        </div>
+
+        <div class="about-card-section">
+            <h2>About The Shop</h2>
+            <p>Sri Sai Liquor Shop is a dedicated premium liquor service provider committed to making exclusive and authentic beverages accessible to all. Founded and managed by <strong>Subba Reddy</strong>, Sri Sai operates as a local hub, meeting your celebration and collection needs with convenient, secure, and customer-oriented services.</p>
+            <p>Our mission is to bring top-tier Indian wines, beers, and whiskeys directly to people, ensuring every purchase is a mark of quality. This includes a curated selection of fine spirits carefully chosen for our discerning customers.</p>
+            <p>We also offer an easy-to-use takeaway ordering system, ensuring secure and convenient options for all customers.</p>
+        </div>
+
+        <div class="about-grid">
+            <div class="about-card-section" style="margin-bottom: 0;">
+                <div class="location-header">
+                    <h2>📍 Our Location</h2>
+                    <p class="location-address">
+                        CXVP+6HC, Mini Bypass Road<br>
+                        Ramamurthy Nagar, Nellore, Andhra Pradesh 524003
+                    </p>
+                </div>
+                <a href="https://maps.app.goo.gl/CuEY7wMDZGzscdit7" target="_blank" class="btn-outline">
+                    ⬈ Get Directions
+                </a>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.0!2d77.5!3d12.9!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDU0JzAwLjAiTiA3N8KwMzAnMDAuMCJF!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+
+            <div class="about-card-section" style="margin-bottom: 0;">
+                <div class="contact-header">
+                    <h2>🎧 Contact Us</h2>
+                    <p>Have questions? Reach out to us through any of these platforms. We're here to help!</p>
+                </div>
+                
+                <div class="contact-methods">
+                    <a href="tel:+917337363358" class="contact-card">
+                        <div class="contact-card-icon icon-phone">📞</div>
+                        <div class="contact-card-info">
+                            <span>Phone Call</span>
+                            <strong>+91 7337363358</strong>
+                        </div>
+                        <div class="contact-card-arrow">&gt;</div>
+                    </a>
+
+                    <a href="https://wa.me/917337363358" target="_blank" class="contact-card">
+                        <div class="contact-card-icon icon-wa">💬</div>
+                        <div class="contact-card-info">
+                            <span>Whatsapp</span>
+                            <strong>Chat with us instantly</strong>
+                        </div>
+                        <div class="contact-card-arrow">&gt;</div>
+                    </a>
+
+                    <a href="mailto:Subbareddy12@gmail.com" class="contact-card">
+                        <div class="contact-card-icon icon-email">✉</div>
+                        <div class="contact-card-info">
+                            <span>Email Address</span>
+                            <strong>Subbareddy12@gmail.com</strong>
+                        </div>
+                        <div class="contact-card-arrow">&gt;</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Contact Us</h4>
+                <ul class="footer-links">
+                    <li><a href="tel:+917337363358">📞 +91 7337363358</a></li>
+                    <li><a href="mailto:Subbareddy12@gmail.com">✉ Subbareddy12@gmail.com</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Follow Us</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Sri Sai Liquor Shop | All Rights Reserved
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

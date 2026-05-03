@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sri Sai Liquor Shop</title>
+    <!-- Google Fonts for Premium look -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/home.css">
+</head>
+
+<body>
+
+
+    <!-- Main Content -->
+    <div id="main-content">
+        <nav>
+            <a href="home.html" style="display: flex; align-items: center; gap: 15px; text-decoration: none;">
+                <img src="images/logo.png" class="logo-img-dark" alt="Logo" style="height: 50px; border-radius: 8px; border: 1px solid rgba(212, 175, 55, 0.3);">
+                <img src="images/logo_light.png" class="logo-img-light" alt="Logo" style="height: 50px; border-radius: 8px; border: 1px solid rgba(212, 175, 55, 0.3);">
+                <span class="logo">Sri Sai Liquor</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="cart.html" style="position: relative; display: flex; align-items: center; color: var(--text-light);"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--text-light);"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg><span class="cart-count" id="cart-count" style="position: absolute; top: -8px; right: -12px; background: #dc3545; color: white; border-radius: 50%; min-width: 18px; height: 18px; font-size: 0.7rem; font-weight: bold; display: flex; align-items: center; justify-content: center;">0</span></a></li>
+                <li id="nav-profile"></li>
+            </ul>
+        </nav>
+
+        <section id="hero">
+            <div class="hero-content">
+                <span class="hero-subtitle" style="color: var(--primary-color); font-size: 0.9rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 600;">ESTABLISHED 1842</span>
+                <h1 style="line-height: 1.1; font-size: 4.5rem; margin-top: 15px; margin-bottom: 20px; color: #fff; font-family: 'Playfair Display', serif;">Reserve Your<br>Premium Wine<br>Experience</h1>
+                <p style="max-width: 600px; font-size: 1.15rem; line-height: 1.6; margin-bottom: 30px; color: rgba(255, 255, 255, 0.9);">Book your visit, tasting, and bottle pickup online at our exclusive estate. An unparalleled journey through viticultural excellence awaits.</p>
+                <div class="hero-btn-group" style="display: flex; gap: 20px; justify-content: flex-start;">
+                    <a href="shop.html" class="btn btn-red">EXPLORE COLLECTION</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="featured-vintage-section" style="padding: 100px 50px; background: var(--bg-dark);">
+            <div class="section-header-row" style="display: flex; justify-content: space-between; align-items: flex-end; max-width: 1200px; margin: 0 auto 50px;">
+                <div class="section-titles">
+                    <span style="color: var(--primary-color); font-size: 0.9rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 600;">Exquisite Selection</span>
+                    <h2 style="font-family: 'Playfair Display', serif; font-size: 3rem; margin-top: 10px; color: var(--text-light);">The Featured Vintage</h2>
+                </div>
+                <a href="shop.html" style="color: var(--text-light); border-bottom: 1px solid var(--primary-color); font-size: 0.9rem; letter-spacing: 1px; padding-bottom: 5px; text-transform: uppercase;">View All Collections</a>
+            </div>
+            
+            <div class="vintage-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; max-width: 1200px; margin: 0 auto;">
+                <div class="vintage-card" style="border: 1px solid var(--nav-border); border-radius: 8px; overflow: hidden; transition: transform 0.5s ease, box-shadow 0.5s ease;">
+                    <img src="images/vintage1.png" alt="Vintage Bottle 1" style="width: 100%; height: 450px; object-fit: cover; transition: transform 0.8s ease;">
+                </div>
+                <div class="vintage-card" style="border: 1px solid var(--nav-border); border-radius: 8px; overflow: hidden; transition: transform 0.5s ease, box-shadow 0.5s ease;">
+                    <img src="images/vintage2.png" alt="Pouring Wine 1" style="width: 100%; height: 450px; object-fit: cover; transition: transform 0.8s ease;">
+                </div>
+                <div class="vintage-card" style="border: 1px solid var(--nav-border); border-radius: 8px; overflow: hidden; transition: transform 0.5s ease, box-shadow 0.5s ease;">
+                    <img src="images/vintage3.png" alt="Vineyard Glass 1" style="width: 100%; height: 450px; object-fit: cover; transition: transform 0.8s ease;">
+                </div>
+                <div class="vintage-card" style="border: 1px solid var(--nav-border); border-radius: 8px; overflow: hidden; transition: transform 0.5s ease, box-shadow 0.5s ease;">
+                    <img src="images/vintage4.png" alt="Vintage Bottle 2" style="width: 100%; height: 450px; object-fit: cover; transition: transform 0.8s ease;">
+                </div>
+                <div class="vintage-card" style="border: 1px solid var(--nav-border); border-radius: 8px; overflow: hidden; transition: transform 0.5s ease, box-shadow 0.5s ease;">
+                    <img src="images/vintage5.png" alt="Pouring Wine 2" style="width: 100%; height: 450px; object-fit: cover; transition: transform 0.8s ease;">
+                </div>
+                <div class="vintage-card" style="border: 1px solid var(--nav-border); border-radius: 8px; overflow: hidden; transition: transform 0.5s ease, box-shadow 0.5s ease;">
+                    <img src="images/vintage6.png" alt="Vineyard Glass 2" style="width: 100%; height: 450px; object-fit: cover; transition: transform 0.8s ease;">
+                </div>
+            </div>
+        </section>
+
+        <section class="why-choose-section" style="padding: 100px 50px; background: var(--bg-card);">
+            <div class="section-header-centered" style="text-align: center; margin-bottom: 60px;">
+                <span style="color: var(--primary-color); font-size: 0.9rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 600;">The Experience</span>
+                <h2 style="font-family: 'Playfair Display', serif; font-size: 3rem; margin-top: 10px; color: var(--text-light);">Why Choose Sri Sai Wines</h2>
+            </div>
+            
+            <div class="asymmetric-layout" style="display: grid; grid-template-columns: 2fr 1fr; gap: 40px; max-width: 1200px; margin: 0 auto;">
+                <div class="asymmetric-card large-card" style="background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('images/provenance_bg.png'); background-size: cover; background-position: center; border-radius: 12px; padding: 60px 40px; display: flex; align-items: flex-end; min-height: 350px; border: 1px solid var(--nav-border); position: relative;">
+                    <div class="card-content" style="position: relative; z-index: 2;">
+                        <h3 style="font-size: 2.2rem; color: #fff; font-family: 'Playfair Display', serif; margin-bottom: 15px;">Centuries of Provenance</h3>
+                        <p style="color: rgba(255,255,255,0.9); max-width: 500px; font-size: 1.05rem; line-height: 1.6;">Our vineyard foundations date back to 1842, maintaining a legacy of uncompromising quality.</p>
+                    </div>
+                </div>
+                
+                <div class="asymmetric-card small-card" style="background: var(--bg-dark); border: 1px solid var(--nav-border); border-radius: 12px; padding: 60px 40px; display: flex; align-items: center; min-height: 350px; position: relative;">
+                    <div class="card-content">
+                        <div class="icon-badge" style="font-size: 2.5rem; color: var(--primary-color); margin-bottom: 20px;">🏅</div>
+                        <h3 style="font-size: 1.8rem; color: var(--text-light); font-family: 'Playfair Display', serif; margin-bottom: 15px;">Master Sommelier Guided</h3>
+                        <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.6;">Every bottle and tasting is curated by world-class experts with decades of palate training.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Contact Us</h4>
+                <ul class="footer-links">
+                    <li><a href="tel:+917337363358">📞 +91 7337363358</a></li>
+                    <li><a href="mailto:Subbareddy12@gmail.com">✉ Subbareddy12@gmail.com</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Follow Us</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Sri Sai Liquor Shop | All Rights Reserved
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
