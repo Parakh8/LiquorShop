@@ -1,4 +1,4 @@
-const API_URL = window.location.origin + '/api';
+const API_URL = 'https://shreeliquorshop-backend.onrender.com/api';
 
 // Theme switcher removed
 
